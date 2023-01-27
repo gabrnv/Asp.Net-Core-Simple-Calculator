@@ -1,8 +1,33 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model InputViewModel
+
+@{
+    ViewData["Title"] = "Calculator";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<main class="w-25 d-inline">
+    <div class="input-field">
+        <label asp-for="@Model.Input" class="input-label">Input</label>
+        <input asp-for="@Model.Input" class="input" aria-required="true" />
+    </div>
+    <div class="down-field">
+        <div class="numbers-field d-flex">
+            <button class="input-button">1</button>
+            <button class="input-button">2</button>
+            <button class="input-button">3</button>
+            <button class="input-button">4</button>
+            <button class="input-button">5</button>
+            <button class="input-button">6</button>
+            <button class="input-button">7</button>
+            <button class="input-button">8</button>
+            <button class="input-button">9</button>
+            <button class="input-button">0</button>
+        </div>
+        <div class="signs-field d-inline">
+            <button class="input-sign-button">+</button>
+            <button class="input-sign-button">-</button>
+            <button class="input-sign-button">/</button>
+            <button class="input-sign-button">X</button>
+        </div>
+    </div>
+    <button class="button-calculate">Calculate</button>
+</main>
