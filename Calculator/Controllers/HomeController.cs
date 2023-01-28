@@ -1,5 +1,6 @@
 ﻿using Calculator.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Diagnostics;
 
 namespace Calculator.Controllers
@@ -29,6 +30,34 @@ namespace Calculator.Controllers
             List<string> inputs = input.Split().ToList();
 
             bool isValid = true;
+
+            List<string> signs = new List<string>() {"/", "X"};
+
+            for (int i = 0; i < inputs.Count(); i++)
+            {
+                if (signs.Contains(inputs[i]))
+                {
+                    int positionToInsertIn = i - 1;
+                    int previous = int.Parse(inputs[i - 1]);
+                    string sign = inputs[i];
+                    int next = int.Parse(inputs[i + 1]);
+
+                    int sum = 0;
+
+                    switch (sign)
+                    {
+                        case "/":
+                            sum += previous / next;
+                            break;
+                        case "X":
+                            sum += previous * next;
+                            break;
+                    }
+
+                    inputs.RemoveRange(positionToInsertIn, 3);
+                    inputs.Insert(positionToInsertIn, sum.ToString());
+                }
+            }
 
             while(isValid)
             {
