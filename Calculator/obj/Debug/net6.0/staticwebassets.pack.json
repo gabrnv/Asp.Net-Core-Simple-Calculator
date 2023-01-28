@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Calculator.bundle.scp.css"
     },
     {
+      "Id": "D:\\Projects\\Calculator\\Calculator\\Calculator\\wwwroot\\css\\calculate.css",
+      "PackagePath": "staticwebassets\\css\\calculate.css"
+    },
+    {
       "Id": "D:\\Projects\\Calculator\\Calculator\\Calculator\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

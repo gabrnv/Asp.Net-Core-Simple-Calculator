@@ -1,0 +1,9 @@
+.input-label, input{
+    display: block;
+}
+
+
+.main{
+    background-color: grey;
+    width: 500px;
+}

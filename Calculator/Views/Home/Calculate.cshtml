@@ -7,27 +7,26 @@
 <main class="w-25 d-inline">
     <form asp-controller="Home" asp-action="Calculate" method="post">
     <div class="input-field">
-        <label asp-for="@Model.Input" class="input-label">Input</label>
         <input asp-for="@Model.Input" class="input" value="@Model.Sum" aria-required="true" />
     </div>
     <div class="down-field">
-        <div class="numbers-field d-flex">
-            <button class="input-button">1</button>
-            <button class="input-button">2</button>
-            <button class="input-button">3</button>
-            <button class="input-button">4</button>
-            <button class="input-button">5</button>
-            <button class="input-button">6</button>
-            <button class="input-button">7</button>
-            <button class="input-button">8</button>
-            <button class="input-button">9</button>
-            <button class="input-button">0</button>
+        <div class="numbers-field">
+            <button type="button" class="input-button" onclick="addNum(1)">1</button>
+            <button type="button" class="input-button" onclick="addNum(2)">2</button>
+            <button type="button" class="input-button" onclick="addNum(3)">3</button>
+            <button type="button" class="input-button" onclick="addNum(4)">4</button>
+            <button type="button" class="input-button" onclick="addNum(5)">5</button>
+            <button type="button" class="input-button" onclick="addNum(6)">6</button>
+            <button type="button" class="input-button" onclick="addNum(7)">7</button>
+            <button type="button" class="input-button" onclick="addNum(8)">8</button>
+            <button type="button" class="input-button" onclick="addNum(9)">9</button>
+            <button type="button" class="input-button last-button" onclick="addNum(9)">0</button>
         </div>
-        <div class="signs-field d-inline">
-            <button class="input-sign-button">+</button>
-            <button class="input-sign-button">-</button>
-            <button class="input-sign-button">/</button>
-            <button class="input-sign-button">X</button>
+        <div class="signs-field">
+            <button type="button" class="input-button" onclick="addNum('+')">+</button>
+            <button type="button" class="input-button" onclick="addNum('-')">-</button>
+            <button type="button" class="input-button" onclick="addNum('/')">/</button>
+            <button type="button" class="input-button" onclick="addNum('X')">X</button>
         </div>
     </div>
         <input id="sumbit-button" type="submit" value="Calculate" />
@@ -36,6 +35,10 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript">
-    document.getElementsByClassName("sumbit-button").onclick = function () { document.getElementsByClassName("input-label").val = @Model.Sum };
+    document.getElementsByClassName("sumbit-button").onclick = function () { document.getElementsByClassName("input").val = @Model.Sum }
+    var input = document.querySelector(".input")
+    function addNum(num){
+        input.value = input.value + num
+    }
 </script>
 

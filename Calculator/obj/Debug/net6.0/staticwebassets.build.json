@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DB9SuW4YvfmgouYliD4TEG7p6cWZ7TUwReuFaK5zylY=",
+  "Hash": "oG68ytSha2HgtrmOOtd6PAyCvw2kvYKq8EX8OtJ8LDw=",
   "Source": "Calculator",
   "BasePath": "_content/Calculator",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Projects\\Calculator\\Calculator\\Calculator\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Calculator.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Projects\\Calculator\\Calculator\\Calculator\\wwwroot\\css\\calculate.css",
+      "SourceId": "Calculator",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\Calculator\\Calculator\\Calculator\\wwwroot\\",
+      "BasePath": "_content/Calculator",
+      "RelativePath": "css/calculate.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\calculate.css"
     },
     {
       "Identity": "D:\\Projects\\Calculator\\Calculator\\Calculator\\wwwroot\\css\\site.css",
