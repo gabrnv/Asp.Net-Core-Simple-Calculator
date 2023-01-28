@@ -13,14 +13,54 @@ namespace Calculator.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Calculate()
         {
-            return View();
+            return View(new InputViewModel());
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Calculate(InputViewModel model)
         {
-            return View();
+            string input = model.Input;
+
+            int totalSum = 0;
+
+            List<string> inputs = input.Split().ToList();
+
+            for (int i = 0; i < inputs.Count; i+=3)
+            {
+                string currentInput = inputs[i];
+                string sign = inputs[i+1];
+                string nextInput = inputs[i+2];
+
+                int num = int.Parse(currentInput);
+                int nextNum = int.Parse(nextInput);
+
+                int sum = 0;
+
+                switch(sign)
+                {
+                    case "+":
+                        sum += num + nextNum;
+                        break;
+                    case "-":
+                        sum += num - nextNum;
+                        break;
+                    case "/":
+                        sum += num / nextNum;
+                        break;
+                    case "X":
+                        sum += num * nextNum;
+                        break;
+                }
+
+                totalSum += sum;
+            }
+            
+            model.Sum = totalSum.ToString();
+
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

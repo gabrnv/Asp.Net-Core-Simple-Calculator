@@ -16,8 +16,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Projects\Calculator\Calculator\Calculator
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Projects/Calculator/Calculator/Calculator/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[D:/Projects/Calculator/Calculator/Calculator/Views/Home/Calculate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYWxjdWxhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/Calculator/Calculator/Calculator/Views/Shared/Error.cshtml]

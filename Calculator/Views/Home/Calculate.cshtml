@@ -5,9 +5,10 @@
 }
 
 <main class="w-25 d-inline">
+    <form asp-controller="Home" asp-action="Calculate" method="post">
     <div class="input-field">
         <label asp-for="@Model.Input" class="input-label">Input</label>
-        <input asp-for="@Model.Input" class="input" aria-required="true" />
+        <input asp-for="@Model.Input" class="input" value="@Model.Sum" aria-required="true" />
     </div>
     <div class="down-field">
         <div class="numbers-field d-flex">
@@ -29,5 +30,12 @@
             <button class="input-sign-button">X</button>
         </div>
     </div>
-    <button class="button-calculate">Calculate</button>
+        <input id="sumbit-button" type="submit" value="Calculate" />
+    </form>
 </main>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+    document.getElementsByClassName("sumbit-button").onclick = function () { document.getElementsByClassName("input-label").val = @Model.Sum };
+</script>
+
