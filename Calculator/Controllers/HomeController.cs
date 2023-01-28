@@ -28,11 +28,13 @@ namespace Calculator.Controllers
 
             List<string> inputs = input.Split().ToList();
 
-            for (int i = 0; i < inputs.Count; i+=3)
+            bool isValid = true;
+
+            while(isValid)
             {
-                string currentInput = inputs[i];
-                string sign = inputs[i+1];
-                string nextInput = inputs[i+2];
+                string currentInput = inputs[0];
+                string sign = inputs[1];
+                string nextInput = inputs[2];
 
                 int num = int.Parse(currentInput);
                 int nextNum = int.Parse(nextInput);
@@ -55,10 +57,18 @@ namespace Calculator.Controllers
                         break;
                 }
 
-                totalSum += sum;
+                inputs.RemoveRange(0, 3);
+                inputs.Insert(0, sum.ToString());
+
+                if (inputs.Count() < 3)
+                {
+                    totalSum += sum;
+                    break;
+                }
             }
             
-            model.Sum = totalSum.ToString();
+
+            model.Sum = totalSum.ToString() + " ";
 
             return View(model);
         }

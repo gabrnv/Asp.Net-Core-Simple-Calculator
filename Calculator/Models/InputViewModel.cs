@@ -6,7 +6,7 @@ namespace Calculator.Models
     {
         public InputViewModel()
         {
-            Sum = "0";
+            Sum = "";
         }
 
         [Required]
